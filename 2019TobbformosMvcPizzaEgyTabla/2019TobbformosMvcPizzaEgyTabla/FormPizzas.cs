@@ -27,7 +27,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         bool ujAdatfelvitel = false;
 
-        private void buttonBetoltesPizzak_Click(object sender, EventArgs e)
+        private void buttonPizzaBetoltes_Click(object sender, EventArgs e)
         {
             //Adatbázisban pizza tábla kezelése
             RepositoryDatabaseTablePizza rtp = new RepositoryDatabaseTablePizza();
@@ -35,7 +35,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             repo.setPizzas(rtp.getPizzasFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
             beallitPizzaDataGriViewt();
-            beallitGombokatIndulaskor();            
+            beallitGombokatIndulaskor();
 
             dataGridViewPizzak.SelectionChanged += DataGridViewPizzak_SelectionChanged;
         }
@@ -43,7 +43,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         private void beallitGombokatIndulaskor()
         {
             panelPizza.Visible = false;
-            panelModositTorolGombok.Visible = false ;
+            panelModositTorolGombok.Visible = false;
             if (dataGridViewPizzak.SelectedRows.Count != 0)
                 buttonUjPizza.Visible = false;
             else
@@ -256,6 +256,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -286,6 +287,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             textBoxPizzaAr.Text = string.Empty;
           
         }
+
         private void beallitGombokatTextboxokatUjPizzanal()
         {
             panelPizza.Visible = true;

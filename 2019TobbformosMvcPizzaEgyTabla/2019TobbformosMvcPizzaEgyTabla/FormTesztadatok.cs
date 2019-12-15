@@ -16,7 +16,6 @@ namespace _2019TobbformosMvcPizzaEgyTabla
     {
         RepositoryDatabase rd = new RepositoryDatabase();
         RepositoryDatabaseTablePizza rtp = new RepositoryDatabaseTablePizza();
-
         private void torolHibauzenetet()
         {
             toolStripLabelHibauzenet.ForeColor = Color.Black;
@@ -60,7 +59,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             {
                 torolHibauzenetet();
                 rtp.createTablePizza();
+                rtp.createTableFutar();
                 rtp.fillPizzasWithTestDataFromSQLCommand();
+                rtp.fillFutarokWithTestDataFromSQLCommand();
             }
             catch (Exception ex)
             {
@@ -74,6 +75,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             {
                 torolHibauzenetet();
                 rtp.deleteTablePizza();
+                rtp.deleteTableFutar();
             }
             catch (Exception ex)
             {

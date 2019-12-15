@@ -12,29 +12,6 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 {
     partial class RepositoryDatabaseTablePizza
     {
-   /*     public void fillPizzasWithTestDataFromTestData(List<Pizza> pizzas)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-                foreach (Pizza p in pizzas)
-                {
-                    string query = p.getInsert();
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    cmd.ExecuteNonQuery();
-                }
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.Message);
-                throw new RepositoryException("Tesztadatok feltöltése sikertelen.");
-            }
-        }*/
-
         public void fillPizzasWithTestDataFromSQLCommand()
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -58,6 +35,31 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 connection.Close();
                 Debug.WriteLine(e.Message);
                 throw new RepositoryException("Tesztadatok feltöltése sikertelen.");
+            }
+        }
+        public void fillFutarokWithTestDataFromSQLCommand()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+
+                string query =
+                    "INSERT INTO `futarok` (`id`, `nev`, `lakcim`, `telefonszam`, `email`) VALUES " +
+                            " (1, 'Dani', 'Szeged, Valami utca 5.', '06305776901', 'valami@gmail.com'), " +
+                            " (2, 'Norbi', 'Szeged, Valami utca 6.', '06206554123', 'valami2@gmail.com'), " +
+                            " (3, 'Peti', 'Szeged, Valami utca 7.', '06301447896', 'valami3@gmail.com'), " +
+                            " (4, 'Feri', 'Szeged, Valami utca 8.', '06203974165', 'valami4@gmail.com'), " +
+                            " (5, 'Béla', 'Szeged, Valami utca 9.', '06304771424', 'valami5@gmail.com')";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                throw new RepositoryException("Tesztadatok feltöltése sikertelen!");
             }
         }
     }
