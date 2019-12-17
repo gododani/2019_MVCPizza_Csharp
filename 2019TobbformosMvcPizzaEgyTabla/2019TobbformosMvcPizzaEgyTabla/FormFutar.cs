@@ -98,10 +98,10 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             futarsDT.Columns[1].Caption = "Futár név";
             futarsDT.Columns[2].ColumnName = "Lakcím";
             futarsDT.Columns[2].Caption = "Futár lakcím";
-            futarsDT.Columns[2].ColumnName = "Telefonszám";
-            futarsDT.Columns[2].Caption = "Futár telefonszám";
-            futarsDT.Columns[2].ColumnName = "Email";
-            futarsDT.Columns[2].Caption = "Futár email";
+            futarsDT.Columns[3].ColumnName = "Telefonszám";
+            futarsDT.Columns[3].Caption = "Futár telefonszám";
+            futarsDT.Columns[4].ColumnName = "Email ";
+            futarsDT.Columns[4].Caption = "Futár email";
 
             dataGridViewFutars.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
@@ -162,8 +162,10 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         private void buttonModositFutar_Click(object sender, EventArgs e)
         {
             torolHibauzenetet();
-            //errorProviderPizzaName.Clear();
-            //errorProviderPizzaPrice.Clear();
+            errorProviderFutarNev.Clear();
+            errorProviderFutarLakcim.Clear();
+            errorProviderFutarTelefonszam.Clear();
+            errorProviderFutarEmail.Clear();
             try
             {
                 Futar modosult = new Futar(
@@ -197,13 +199,21 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 //3. módosítani a DataGridView-ban           
                 frissitFutarAdatokkalDataGriedViewt();
             }
-            catch (ModelPizzaNotValidNameExeption nvn)
+            catch (ModelFutarNotValidNameExeption nvn)
             {
-                errorProviderPizzaName.SetError(textBoxPizzaNev, nvn.Message);
+                errorProviderFutarNev.SetError(textBoxFutarNAME, nvn.Message);
             }
-            catch (ModelPizzaNotValidPriceExeption nvp)
+            catch (ModelFutarNotValidLakcimExeption nvl)
             {
-                errorProviderPizzaName.SetError(textBoxPizzaAr, nvp.Message);
+                errorProviderFutarLakcim.SetError(textBoxFutarADDRESS, nvl.Message);
+            }
+            catch (ModelFutarNotValidTelefonszamExeption nvt)
+            {
+                errorProviderFutarTelefonszam.SetError(textBoxFutarPHONENUM, nvt.Message);
+            }
+            catch (ModelFutarNotValidEmailExeption nve)
+            {
+                errorProviderFutarEmail.SetError(textBoxFutarEMAIL, nve.Message);
             }
             catch (RepositoryExceptionCantModified recm)
             {
@@ -217,8 +227,10 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         private void buttonUjFutarMentes_Click(object sender, EventArgs e)
         {
             torolHibauzenetet();
-            //errorProviderPizzaName.Clear();
-            //errorProviderPizzaPrice.Clear();
+            errorProviderFutarNev.Clear();
+            errorProviderFutarLakcim.Clear();
+            errorProviderFutarTelefonszam.Clear();
+            errorProviderFutarEmail.Clear();
             try
             {
                 Futar ujFutar = new Futar(

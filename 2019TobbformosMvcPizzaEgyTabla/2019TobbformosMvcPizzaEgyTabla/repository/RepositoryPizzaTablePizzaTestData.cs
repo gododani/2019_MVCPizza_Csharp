@@ -46,10 +46,10 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 
                 string query =
                     "INSERT INTO `futarok` (`id`, `nev`, `lakcim`, `telefonszam`, `email`) VALUES " +
-                            " (1, 'Dani', 'Szeged, Valami utca 5.', '06305776901', 'valami@gmail.com'), " +
-                            " (2, 'Norbi', 'Szeged, Valami utca 6.', '06206554123', 'valami2@gmail.com'), " +
-                            " (3, 'Peti', 'Szeged, Valami utca 7.', '06301447896', 'valami3@gmail.com'), " +
-                            " (4, 'Feri', 'Szeged, Valami utca 8.', '06203974165', 'valami4@gmail.com'), " +
+                            " (1, 'Dániel', 'Szeged, Valami utca 5.', '06305776901', 'valami@gmail.com'), " +
+                            " (2, 'Norbert', 'Szeged, Valami utca 6.', '06206554123', 'valami2@gmail.com'), " +
+                            " (3, 'Péter', 'Szeged, Valami utca 7.', '06301447896', 'valami3@gmail.com'), " +
+                            " (4, 'Ferenc', 'Szeged, Valami utca 8.', '06203974165', 'valami4@gmail.com'), " +
                             " (5, 'Béla', 'Szeged, Valami utca 9.', '06304771424', 'valami5@gmail.com')";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
