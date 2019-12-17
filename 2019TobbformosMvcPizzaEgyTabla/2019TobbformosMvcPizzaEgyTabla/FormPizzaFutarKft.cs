@@ -41,5 +41,10 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         {
             tabControlPizzaFutarKFT.SelectTab("tabPagePizzak");
         }
+
+        private void kilépésToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

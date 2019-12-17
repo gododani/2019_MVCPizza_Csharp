@@ -95,6 +95,7 @@
             this.errorProviderFutarLakcim = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFutarTelefonszam = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFutarEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.kilépésToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStripStatus.SuspendLayout();
             this.toolStripToolbar.SuspendLayout();
@@ -142,21 +143,21 @@
             // pizzaToolStripMenuItem
             // 
             this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pizzaToolStripMenuItem.Text = "Pizza";
             this.pizzaToolStripMenuItem.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // futárToolStripMenuItem
             // 
             this.futárToolStripMenuItem.Name = "futárToolStripMenuItem";
-            this.futárToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.futárToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.futárToolStripMenuItem.Text = "Futár";
             this.futárToolStripMenuItem.Click += new System.EventHandler(this.futárToolStripMenuItem_Click);
             // 
             // megrendelőToolStripMenuItem
             // 
             this.megrendelőToolStripMenuItem.Name = "megrendelőToolStripMenuItem";
-            this.megrendelőToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.megrendelőToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.megrendelőToolStripMenuItem.Text = "Megrendelő";
             this.megrendelőToolStripMenuItem.Click += new System.EventHandler(this.megrendelőToolStripMenuItem_Click);
             // 
@@ -221,6 +222,8 @@
             // 
             // kilépésToolStripMenuItem
             // 
+            this.kilépésToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kilépésToolStripMenuItem1});
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
             this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
@@ -696,6 +699,13 @@
             // 
             this.errorProviderFutarEmail.ContainerControl = this;
             // 
+            // kilépésToolStripMenuItem1
+            // 
+            this.kilépésToolStripMenuItem1.Name = "kilépésToolStripMenuItem1";
+            this.kilépésToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.kilépésToolStripMenuItem1.Text = "Kilépés";
+            this.kilépésToolStripMenuItem1.Click += new System.EventHandler(this.kilépésToolStripMenuItem1_Click);
+            // 
             // FormPizzaFutarKft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -803,6 +813,7 @@
         private System.Windows.Forms.ErrorProvider errorProviderFutarLakcim;
         private System.Windows.Forms.ErrorProvider errorProviderFutarTelefonszam;
         private System.Windows.Forms.ErrorProvider errorProviderFutarEmail;
+        private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem1;
     }
 }
 
